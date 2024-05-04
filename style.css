@@ -1,0 +1,148 @@
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/********************** form */
+
+form .rsform-block-nome,
+form .rsform-block-email,
+form .rsform-block-mensagem,
+form .rsform-block-captcha,
+.rsform-block.rsform-block-celular,
+.rsform-block.rsform-block-telefone-residencial, select {
+  /*border: 1px solid #3e4245;*/
+  border-left: 10px solid #a32a33;
+  font-size: 19px;
+  -webkit-box-shadow: 0px 3px 5px 1px rgba(102, 102, 102, 0.5);
+  -moz-box-shadow: 0px 3px 5px 1px rgba(102, 102, 102, 0.5);
+  box-shadow: 0px 3px 5px 1px rgba(102, 102, 102, 0.5);
+}
+
+.formResponsive select,
+.formResponsive textarea,
+.formResponsive input[type="text"],
+.formResponsive input[type="password"] {
+  display: inline-block;
+  height: 100%;
+  padding: 4px;
+  margin-bottom: -3px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #555555;
+  margin-top: 6px;
+  width: 100%;
+  min-height: 50px;
+  margin-bottom: 18px;
+}
+
+#mensagem {
+  height: 150px;
+}
+
+.formResponsive input[type="submit"]:hover,
+.formResponsive input[type="submit"]:active,
+.formResponsive input[type="submit"].active,
+.formResponsive input[type="submit"].disabled,
+.formResponsive input[type="submit"][disabled] {
+  background-color: #13707c;
+}
+
+.formResponsive textarea,
+.formResponsive input[type="text"],
+.formResponsive input[type="password"] {
+  border: 1px solid transparent;
+}
+
+.formResponsive input[type="text"],
+.formResponsive textarea {
+  box-shadow: none !important;
+  border: none !important;
+  resize: none;
+}
+
+.formResponsive .formHorizontal .formControls {
+  margin-left: 0px;
+}
+
+div .formControlLabel {
+  display: none;
+}
+
+.formResponsive .formBody {
+  float: none;
+  position: relative;
+}
+
+.formResponsive input[type="submit"] {
+  background-color: #a32b33 !important;
+  background-image: none !important;
+  border: none;
+  position: absolute;
+  right: 0;
+}
+
+form .rsform-block-nome {
+  margin-top: 14px;
+}
+
+.tituloFC {
+  margin-top: 4%;
+}
+
+#captchaTxt26 {
+  width: 250px !important;
+  border: 1px solid #13707c !important;
+  margin-left: 1%;
+}
+
+
+
+
+/* CSS */
+.button-6 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}

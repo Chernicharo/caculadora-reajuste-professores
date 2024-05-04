@@ -4,36 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formulário de Cadastro</title>
+<link rel="stylesheet" href="style.css">
 <style>
-    label {
-        display: block;
-        margin-bottom: 10px;
-    }
+
 </style>
 </head>
 <body>
-
-<form id="cadastroForm">
-    <label for="carreira">Carreira:</label>
+<p>
+    No dia 19 de abril, o governo apresentou a seguinte proposta salarial para os professores do magistério federal: zero neste ano; 9% a partir de janeiro de 2025 e 3,5% em maio de 2026. Além disso, haveria um aumento de 4% para 4,5% nos chamados steps das classes C e D (magistério superior) e D III e D IV (EBTT). 
+Ao inserir os dados relativos à carreira nos próximos campos, o professor poderá saber como ficará seu salário em 2025 ou 2026, de acordo com a proposta do governo.
+</p>
+<form id="cadastroForm" class="formResponsive">
     <select id="carreira" onchange="updateClasses()">
-        <option value="">Selecione...</option>
+        <option value="" disabled selected hidden>Carreira</option>
         <option value="magisterio_superior">Magistério Superior</option>
         <option value="ebtt">EBTT</option>
     </select>
 
-    <label for="classe">Classe:</label>
+    
     <select id="classe" onchange="updateNiveis()">
-        <option value="">Selecione...</option>
+        <option value="">Classe</option>
     </select>
 
-    <label for="nivel">Nível:</label>
+    
     <select id="nivel">
-        <option value="">Selecione...</option>
+        <option value="">Nível</option>
     </select>
 
-    <label for="retribuicao">Retribuição por Titulação:</label>
+    
     <select id="retribuicao">
-        <option value="">Selecione...</option>
+        <option value="" disabled selected hidden>Retribuição por Titulação</option>
         <option value="srt">SEM RT</option>
         <option value="ape">Aperfeiçoamento</option>
         <option value="esp">Especialização</option>
@@ -41,23 +41,24 @@
         <option value="dou">Doutorado</option>
     </select>
 
-    <label for="regime">Regime de Trabalho:</label>
+    
     <select id="regime">
-        <option value="">Selecione...</option>
+        <option value="" disabled selected hidden>Regime de Trabalho</option>
         <option value="p20h">20H</option>
         <option value="p40h">40H</option>
         <option value="p40hde">40H DE</option>
     </select>
 
-    <label for="aumento">Ano do Aumento:</label>
+    
     <select id="aumento">
-        <option value="">Selecione...</option>
+        <option value="" disabled selected hidden>Ano do Aumento</option>
         <option value="a2025">2025</option>
         <option value="a2026">2026</option>
     </select>
 
-    <button type="submit">Enviar</button>
+    <button type="submit" class="button-6">Calcular</button>
 </form>
+<h3 id="resultado"></h3>
 
 <script>
     function updateClasses() {
@@ -115,7 +116,8 @@
         };
         console.log(formData);
         console.log(banco[formData.regime][formData.aumento][formData.retribuicao][formData.chaveTest]);
-      
+        var resultado = document.getElementById("resultado")
+        resultado.textContent  = "Valor: R$" + banco[formData.regime][formData.aumento][formData.retribuicao][formData.chaveTest]
     });
 
 
