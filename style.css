@@ -146,3 +146,8 @@ form .rsform-block-nome {
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
 }
+
+body {
+    align-content: center;
+    max-width: 700px;
+}
