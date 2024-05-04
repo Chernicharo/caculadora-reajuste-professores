@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário de Cadastro</title>
+<style>
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<form id="cadastroForm">
+    <label for="carreira">Carreira:</label>
+    <select id="carreira" onchange="updateClasses()">
+        <option value="">Selecione...</option>
+        <option value="magisterio_superior">Magistério Superior</option>
+        <option value="ebtt">EBTT</option>
+    </select>
+
+    <label for="classe">Classe:</label>
+    <select id="classe" onchange="updateNiveis()">
+        <option value="">Selecione...</option>
+    </select>
+
+    <label for="nivel">Nível:</label>
+    <select id="nivel">
+        <option value="">Selecione...</option>
+    </select>
+
+    <label for="retribuicao">Retribuição por Titulação:</label>
+    <select id="retribuicao">
+        <option value="">Selecione...</option>
+        <option value="sem_rt">SEM RT</option>
+        <option value="aperfeicoamento">Aperfeiçoamento</option>
+        <option value="especializacao">Especialização</option>
+        <option value="mestrado">Mestrado</option>
+        <option value="doutorado">Doutorado</option>
+    </select>
+
+    <label for="regime">Regime de Trabalho:</label>
+    <select id="regime">
+        <option value="">Selecione...</option>
+        <option value="20h">20H</option>
+        <option value="40h">40H</option>
+        <option value="40h_de">40H DE</option>
+    </select>
+
+    <label for="aumento">Ano do Aumento:</label>
+    <select id="aumento">
+        <option value="">Selecione...</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+    </select>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<script>
+    function updateClasses() {
+        var carreira = document.getElementById("carreira").value;
+        var classeSelect = document.getElementById("classe");
+        classeSelect.innerHTML = "";
+        var classes = [];
+        if (carreira === "magisterio_superior") {
+            classes = ["A", "B", "C", "D", "E"];
+        } else if (carreira === "ebtt") {
+            classes = ["D I", "D II", "D III", "D IV", "TITULAR"];
+        }
+        classes.forEach(function(classe) {
+            var option = document.createElement("option");
+            option.text = classe;
+            option.value = classe;
+            classeSelect.add(option);
+        });
+        updateNiveis();
+    }
+
+    function updateNiveis() {
+        var classe = document.getElementById("classe").value;
+        var nivelSelect = document.getElementById("nivel");
+        nivelSelect.innerHTML = "";
+        var niveis = [];
+        if (classe === "E" || classe === "TITULAR") {
+            niveis = ["1"];
+        } else if (classe === "D" || classe === "D IV" || classe === "C" || classe === "D III") {
+            niveis = ["1", "2", "3", "4"];
+        } else if (classe === "B" || classe === "D II") {
+            niveis = ["1", "2"];
+        } else if (classe === "A" || classe === "D I") {
+            niveis = ["1", "2"];
+        }
+        niveis.forEach(function(nivel) {
+            var option = document.createElement("option");
+            option.text = nivel;
+            option.value = nivel;
+            nivelSelect.add(option);
+        });
+    }
+
+    document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var formData = {
+            carreira: document.getElementById("carreira").value,
+            classe: document.getElementById("classe").value,
+            nivel: document.getElementById("nivel").value,
+            retribuicao: document.getElementById("retribuicao").value,
+            regime: document.getElementById("regime").value,
+            aumento: document.getElementById("aumento").value
+        };
+        console.log(formData);
+        // Aqui você pode enviar os dados para onde quer que precise, como uma API ou outro lugar.
+    });
+</script>
+
+</body>
+</html>
